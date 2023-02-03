@@ -15,7 +15,11 @@
         <table>
           <tr>
             <td colspan="3">
-              <button onclick="randomClick()" class="buttons" id="random">
+              <button
+                onclick="randomClickEventHandler()"
+                class="buttons"
+                id="random"
+              >
                 랜덤숫자 생성
               </button>
             </td>
@@ -55,11 +59,17 @@
           </tr>
           <tr>
             <td>
-              <button type="button" onclick="refreshEvent()" class="buttons">
+              <button
+                type="button"
+                onclick="refreshEventHandler()"
+                class="buttons"
+              >
                 재입력
               </button>
             </td>
-            <td><button onclick="cal(this)" class="buttons">0</button></td>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">0</button>
+            </td>
             <td>
               <button type="submit" id="input-submit" class="buttons">
                 등록
