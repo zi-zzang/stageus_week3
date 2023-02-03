@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자야구</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+  </head>
+  <body>
+    <!-- <video src="images/background-video.mp4" autoplay muted loop></video> -->
+    <div id="wrap">
+      <h1>⚾ 숫자야구 게임 ⚾</h1>
+      <div id="main">
+        <table>
+          <tr>
+            <td colspan="3">
+              <button onclick="randomClick()" class="buttons" id="random">
+                랜덤숫자 생성
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">1</button>
+            </td>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">2</button>
+            </td>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">3</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">4</button>
+            </td>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">5</button>
+            </td>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">6</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">7</button>
+            </td>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">8</button>
+            </td>
+            <td>
+              <button onclick="calEventHandler(this)" class="buttons">9</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" onclick="refreshEvent()" class="buttons">
+                재입력
+              </button>
+            </td>
+            <td><button onclick="cal(this)" class="buttons">0</button></td>
+            <td>
+              <button type="submit" id="input-submit" class="buttons">
+                등록
+              </button>
+            </td>
+          </tr>
+        </table>
+        <div class="answer-box">
+          <p class="rule"><게임 설명></p>
+          <ol>
+            <li class="rule">랜덤 숫자 생성을 눌러 랜덤 숫자를 생성한다.</li>
+            <li class="rule">사용자는 세자리 숫자를 생각해서 등록한다.</li>
+            <li class="rule">
+              컴퓨터가 생각한 숫자와 위치가 같으면 스트라이크, 위치가 다를 경우
+              볼
+            </li>
+            <li class="rule">
+              ex) 컴퓨터가 생각한 숫자가 123, 내가 등록한 숫자가 231이면 볼 3개
+            </li>
+            <li class="rule">
+              기회는 10번, 10번 안에 3 스트라이크가 나올 경우 정답
+            </li>
+          </ol>
+          <div id="answer">
+            <p id="num1" class="numbers"></p>
+            <p id="num2" class="numbers"></p>
+            <p id="num3" class="numbers"></p>
+          </div>
+          <h2 id="game-result">숫자를 입력해 주세요.</h2>
+        </div>
+        <div class="answer-box" id="record-box">
+          <p>기록</p>
+          <div id="record"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script/index.js"></script>
+  </body>
+</html>
