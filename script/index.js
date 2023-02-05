@@ -8,7 +8,8 @@
 
 // 컴퓨터가 3개의 숫자 입력하게 하기 //
 var num = (Math.floor(Math.random() * (999 - 100 + 1)) + 100).toString();
-// (최댓값 - 최소값 + 1) + 최소값
+
+// (최대값 - 최소값 + 1) + 최소값 = 최소값~ 최대값 사이의 난수를 만들어줌.
 var computer = num.split("").map(Number);
 
 // 전역변수
