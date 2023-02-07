@@ -5,16 +5,18 @@
   color: white;
 }
 @font-face {
-  font-family: 'NanumSquareNeo-Variable';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: 'NanumSquareNeo-Variable';
+  font-family: "NanumSquareNeo-Variable";
   background-color: rgb(47, 179, 244);
   /* background-image: url(/img/background.jpg); */
+  user-select: none;
 }
 video {
   z-index: -1;
@@ -23,7 +25,7 @@ video {
   width: 100%;
 }
 #main {
-  height: 465px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,13 +36,15 @@ h1 {
   font-size: 50px;
 }
 /* 숫자버튼 */
-
+#keypad {
+  height: 100%;
+}
 #random {
   width: 100%;
   /* height: */
 }
 .buttons {
-  font-family: 'NanumSquareNeo-Variable';
+  font-family: "NanumSquareNeo-Variable";
   width: 90px;
   height: 90px;
   box-sizing: border-box;
@@ -70,7 +74,7 @@ h1 {
   justify-content: center;
 }
 
-/* 숫자칸 */
+/* 숫자 출력 칸*/
 .numbers {
   display: flex;
   justify-content: center;

@@ -16,7 +16,13 @@
         <table id="keypad">
           <tr>
             <td colspan="3">
-              <button onclick="randomClickEventHandler()" class="buttons" id="random">랜덤숫자 생성</button>
+              <button
+                onclick="randomClickEventHandler()"
+                class="buttons"
+                id="random"
+              >
+                랜덤숫자 생성
+              </button>
             </td>
           </tr>
           <tr>
@@ -54,13 +60,21 @@
           </tr>
           <tr>
             <td>
-              <button type="button" onclick="refreshEventHandler()" class="buttons">재입력</button>
+              <button
+                type="button"
+                onclick="refreshEventHandler()"
+                class="buttons"
+              >
+                재입력
+              </button>
             </td>
             <td>
               <button onclick="calEventHandler(this)" class="buttons">0</button>
             </td>
             <td>
-              <button type="submit" id="input-submit" class="buttons">등록</button>
+              <button type="submit" id="input-submit" class="buttons">
+                등록
+              </button>
             </td>
           </tr>
         </table>
@@ -69,9 +83,17 @@
           <ol>
             <li class="rule">랜덤 숫자 생성을 눌러 랜덤 숫자를 생성한다.</li>
             <li class="rule">사용자는 세자리 숫자를 생각해서 등록한다.</li>
-            <li class="rule">컴퓨터가 생각한 숫자와 위치가 같으면 스트라이크, 위치가 다를 경우 볼</li>
-            <li class="rule">ex) 컴퓨터가 생각한 숫자가 123, 내가 등록한 숫자가 231이면 볼 3개</li>
-            <li class="rule">기회는 10번, 10번 안에 3 스트라이크가 나올 경우 정답</li>
+            <li class="rule">
+              컴퓨터가 생각한 숫자와 위치가 같으면 스트라이크, 위치가 다를 경우
+              볼
+            </li>
+            <li class="rule">
+              ex) 컴퓨터가 생각한 숫자가 123, 내가 등록한 숫자가 231이면 볼 3개
+            </li>
+            <li class="rule">
+              기회는 10번, 10번 안에 3 스트라이크가 나올 경우 정답
+            </li>
+            <li class="rule">중복 되는 숫자 불가 (ex : 111, 233)</li>
           </ol>
           <div id="answer">
             <p id="num1" class="numbers"></p>
