@@ -10,7 +10,7 @@
 var num = (Math.floor(Math.random() * (999 - 100 + 1)) + 100).toString();
 
 // (최대값 - 최소값 + 1) + 최소값 = 최소값~ 최대값 사이의 난수를 만들어줌.
-var computer = num.split("").map(Number);
+var computer = num.split('').map(Number);
 
 // 전역변수
 var count = 0; // 숫자 키패드 카운트
@@ -19,38 +19,35 @@ var submitCount = 0; // 게임횟수 카운트
 //초기화//
 function refreshEventHandler() {
   for (let i = 1; i <= 3; i++) {
-    document.getElementById(`num${i}`).innerHTML = "";
-    document.getElementById("game-result").innerHTML = "숫자를 입력해 주세요.";
-    document.getElementById("game-result").style.color = "red";
+    var gameResult = document.getElementById('game-result');
+    document.getElementById(`num${i}`).innerHTML = '';
+    gameResult.innerHTML = '숫자를 입력해 주세요.';
+    gameResult.style.color = 'rgb(255, 242, 0);';
     count = 0;
   }
 }
 
 //기록 초기화
 function deleteEventHandler() {
-  document.getElementById("record").innerHTML = null;
+  document.getElementById('record').innerHTML = null;
 }
 
 function randomClickEventHandler() {
   // 버튼을 누를 때마다 새로운 랜덤 숫자
   num = (Math.floor(Math.random() * (999 - 100 + 1)) + 100).toString();
-  computer = num.split("").map(Number);
-  alert("새로운 랜덤 숫자가 생성됐습니다.");
+  computer = num.split('').map(Number);
+  alert('새로운 랜덤 숫자가 생성됐습니다.');
   deleteEventHandler(); // 기록 초기화
   submitCount = 0; // 게임 횟수 초기화
 
   // 배열끼리 중복되는 숫자 방지
   // 컴퓨터의 숫자들이 서로 같지 않아야 코드실행 멈춤.
-  while (
-    computer[0] == computer[1] ||
-    computer[0] == computer[2] ||
-    computer[1] == computer[2]
-  ) {
+  while (computer[0] == computer[1] || computer[0] == computer[2] || computer[1] == computer[2]) {
     num = (Math.floor(Math.random() * (999 - 100 + 1)) + 100).toString();
-    computer = num.split("").map(Number);
+    computer = num.split('').map(Number);
   }
 
-  console.log("새로운 랜덤 숫자 " + computer);
+  console.log('새로운 랜덤 숫자 ' + computer);
 }
 
 // 내가 3개의 숫자 입력하기 //
@@ -71,25 +68,25 @@ function calEventHandler(e) {
     // 첫번째 순서에 0을 눌렀을 때 알림창
     // 중첩 if문을 쓴 이유: 0을 누른 순간도 count는 1이 올라가기 때문.
     if (choiceNum1 == 0) {
-      alert("첫번째 자리에는 0이 올 수 없습니다.");
+      alert('첫번째 자리에는 0이 올 수 없습니다.');
       count = 0;
       choiceNum1 = null;
     }
-    document.getElementById("num1").innerText = choiceNum1;
+    document.getElementById('num1').innerText = e.innerText;
   } else if (count == 2) {
     choiceNum2 = e.innerText;
-    document.getElementById("num2").innerText = choiceNum2;
+    document.getElementById('num2').innerText = e.innerText;
   } else if (count == 3) {
     choiceNum3 = e.innerText;
-    document.getElementById("num3").innerText = choiceNum3;
+    document.getElementById('num3').innerText = e.innerText;
   }
   if (count > 3) {
-    alert("3개의 숫자를 모두 고르셨습니다.");
+    alert('3개의 숫자를 모두 고르셨습니다.');
   }
 }
 
 //등록버튼 누른 후//
-document.getElementById("input-submit").addEventListener("click", function () {
+document.getElementById('input-submit').addEventListener('click', function () {
   // 내가 선택한 숫자
   var user = [choiceNum1, choiceNum2, choiceNum3].map(Number);
   console.log(user);
@@ -99,7 +96,7 @@ document.getElementById("input-submit").addEventListener("click", function () {
   var strike = 0;
   var ball = 0;
   if (count == 0) {
-    alert("숫자를 입력 후 등록버튼을 눌러주세요.");
+    alert('숫자를 입력 후 등록버튼을 눌러주세요.');
     return;
   }
 
@@ -123,39 +120,33 @@ document.getElementById("input-submit").addEventListener("click", function () {
         }
       }
     }
-    document.getElementById(
-      "game-result"
-    ).innerHTML = `${strike}스트라이크, ${ball}볼`;
+    document.getElementById('game-result').innerHTML = `${strike}스트라이크, ${ball}볼`;
   }
 
   // 기록 저장
   var data = [];
   var result = `${strike}스트라이크, ${ball}볼`;
   data.push(result);
-  document.getElementById("record").innerHTML += `<p>(${user})  ${data}</p>`;
+  document.getElementById('record').innerHTML += `<p>(${user})  ${data}</p>`;
   console.log(data);
 
   //2,3번째 숫자가 빈 값일 때
   if ((choiceNum2, choiceNum3 == null) || choiceNum3 == null) {
-    alert("숫자를 모두 입력해 주세요.");
+    alert('숫자를 모두 입력해 주세요.');
     deleteEventHandler(); // 기록 삭제
     refreshEventHandler(); // 새로 고침
   }
 
   //3스트라이크일 때
   if (strike == 3) {
-    alert("정답입니다!");
-    document.getElementById(
-      "game-result"
-    ).innerHTML = `짝짝짝! ${strike} 스트라이크입니다!`;
-    document.getElementById("game-result").style.color = "rgb(11, 199, 11)";
+    alert('정답입니다!');
+    document.getElementById('game-result').innerHTML = `짝짝짝! ${strike} 스트라이크입니다!`;
+    document.getElementById('game-result').style.color = 'rgb(43, 157, 215)';
     submitCount = 0;
   }
 
   if (submitCount > 10) {
-    alert("횟수를 모두 소진하셨습니다ㅠㅠ");
-    document.getElementById(
-      "game-result"
-    ).innerHTML = `정답은 ${computer} 입니다.`;
+    alert('횟수를 모두 소진하셨습니다ㅠㅠ');
+    document.getElementById('game-result').innerHTML = `정답은 ${computer} 입니다.`;
   }
 });

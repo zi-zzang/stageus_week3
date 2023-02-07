@@ -2,18 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 @font-face {
-  font-family: "NanumSquareNeo-Variable";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
-    format("woff2");
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: "NanumSquareNeo-Variable";
-  background-color: rgb(149, 210, 131);
+  font-family: 'NanumSquareNeo-Variable';
+  background-color: rgb(47, 179, 244);
   /* background-image: url(/img/background.jpg); */
 }
 video {
@@ -30,31 +30,30 @@ video {
 }
 h1 {
   padding: 80px 0;
-  color: white;
   text-align: center;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   font-size: 50px;
 }
 /* 숫자버튼 */
+
 #random {
   width: 100%;
   /* height: */
 }
 .buttons {
-  font-family: "NanumSquareNeo-Variable";
+  font-family: 'NanumSquareNeo-Variable';
   width: 90px;
   height: 90px;
   box-sizing: border-box;
   border-radius: 20px;
   border: none;
   font-size: 25px;
-  background-color: rgb(11, 199, 11);
-  color: white;
+  background-color: rgb(43, 157, 215);
   cursor: pointer;
 }
 
 .buttons:active {
-  background-color: rgb(10, 146, 10);
+  background-color: rgb(15, 121, 174);
+  box-shadow: none;
 }
 
 .answer-box {
@@ -76,12 +75,12 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
   border-radius: 20px;
   margin: 5px;
   width: 100px;
   height: 100px;
   font-size: 50px;
+  color: rgb(70, 68, 68);
   background-color: white;
 }
 
@@ -89,13 +88,13 @@ h1 {
   font-size: 20px;
   padding: 10px;
   margin: 0 20px;
-  color: white;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  color: rgb(70, 68, 68);
+  /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
 }
 #game-result {
   margin: 10px;
-  color: red;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  color: rgb(255, 242, 0);
+  /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
 }
 #record-box {
   height: 100%;
@@ -108,8 +107,7 @@ h1 {
 #record-box p {
   padding-top: 15px;
   text-align: center;
-  color: white;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
 }
 
 #record {
